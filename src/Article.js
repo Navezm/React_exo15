@@ -1,9 +1,12 @@
 import React, {Fragment, useState} from 'react';
 
-let Article = (props) => {
+function Article(props){
+    const [changeTitle, setChangeTitle] = useState(props.titre)
     return(
         <Fragment>
-            <h1>{props.titre.map((titreInfo) => {return titreInfo})}</h1>
+            {
+                changeTitle.map((elem) => <h1>{elem.titre}</h1>)
+            }
         </Fragment>
     )
 };
